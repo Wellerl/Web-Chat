@@ -8,7 +8,6 @@ from flask_socketio import SocketIO
 app = Flask(__name__)
 
 socketio = SocketIO(app)
-
 app.secret_key = 'senai123'
 
 # Rotas
@@ -87,7 +86,5 @@ def enviar_mensagem():
     
         return redirect('/chat')
 
-
-
-socketio.run(app, host="127.0.0.1", port=80, debug=True)
-
+if __name__ == '__main__':
+    socketio.run(app, host="0.0.0.0", port=80, debug=True)
